@@ -67,24 +67,24 @@ public class TipoDePrenda {
 public enum Categoria {
  
     PARTE_SUPERIOR,
-	CALZADO,
-	PARTE_INFERIOR,
-	ACCESORIOS
+    CALZADO,
+    PARTE_INFERIOR,
+    ACCESORIOS
 }
 
 public enum TipoTela {
     LANA,
-	ALGODON,
-	CUERO,
-	SEDA
+    ALGODON,
+    CUERO,
+    SEDA
 }
 
 public enum Color {
     AZUL,
-	ROJO,
-	VERDE,
-	AMARILLO,
-	NARANJA
+    ROJO,
+    VERDE,
+    AMARILLO,
+    NARANJA
 }
 
 	
@@ -101,6 +101,12 @@ class FaltaMaterialExcepcion() extends Exception {
 }
 
 class FaltaColorExcepcion() extends Exception {
+	new(String msg) {
+		super(msg)
+	}
+}
+
+class categoriaErroneaExcepcion() extends Exception {
 	new(String msg) {
 		super(msg)
 	}
