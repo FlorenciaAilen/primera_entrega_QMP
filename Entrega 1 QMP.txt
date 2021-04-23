@@ -1,0 +1,109 @@
+public class Prenda{
+	
+	TipoPrenda tipoDePrenda;
+	Material material;
+	Color colorPrincipal;
+	Color colorSecundario;
+	
+	public Prenda(TipoPrenda tipoDePrenda,Material material, Color colorPrincipal, Color colorSecundario){
+		       
+		try{
+			this.tipoDePrenda = tipoDePrenda
+			this.material = material;
+			this.colorPrincipal = colorPrincipal
+			this.colorSecundario = colorSecundario
+		}
+		
+		catch(AnyKindOfException e){
+			throw new FaltaTipoDePrendaExcepcion("Es necesario que introduzca una Prenda"); 
+		}
+		catch(AnyKindOfException e){ 
+			throw new FaltaMaterialExcepcion("Es necesario que introduzca un tipo de material"); 
+		}
+		catch(AnyKindOfException e){
+			throw new FaltaColorExcepcion("Es necesario que introduzca un color primario") 
+		}
+		
+		
+		public TipoDePrenda getTipoDePrenda() {
+			return tipoDePrenda;
+		}
+		
+		public Material getMaterial() {
+			return material;
+		}
+		
+		public Color getColorPrincipal() {
+			return colorPrincipal;
+		}
+
+		public Color getColorSecundario() {
+			return colorSecundario;
+		}
+		
+
+	}
+	
+public class TipoDePrenda {
+    Categoria categoria; 
+
+    public TipoPrenda(Categoria categoria, String nombreTipo) {
+	
+		try{
+			this.categoria = categoria;
+		}
+		catch(AnyKindOfException e){
+			throw new categoriaErroneaExcepcion("La categoria no coincide con la prenda"); 
+		}
+    }
+	
+	public Categoria getCategoria() {
+        return categoria;
+    }
+
+   
+}
+	
+public enum Categoria {
+ 
+    PARTE_SUPERIOR,
+	CALZADO,
+	PARTE_INFERIOR,
+	ACCESORIOS
+}
+
+public enum TipoTela {
+    LANA,
+	ALGODON,
+	CUERO,
+	SEDA
+}
+
+public enum Color {
+    AZUL,
+	ROJO,
+	VERDE,
+	AMARILLO,
+	NARANJA
+}
+
+	
+class FaltaTipoDePrendaExcepcion() extends Exception {
+	new(String msg) {
+		super(msg)
+	}
+}
+
+class FaltaMaterialExcepcion() extends Exception {
+	new(String msg) {
+		super(msg)
+	}
+}
+
+class FaltaColorExcepcion() extends Exception {
+	new(String msg) {
+		super(msg)
+	}
+}
+
+
